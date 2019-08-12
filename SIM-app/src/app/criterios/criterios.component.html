@@ -1,0 +1,27 @@
+<html (mousemove)="onMove()">
+<table>
+<tr>
+   <td><label>Nome </label></td>
+   <td><input [(ngModel)]="criterio.nome" name="criterioNomeInput"></td>
+   <td name="botaoCriarCriterio"><button (click)="criarCriterio(criterio)">Criar</button></td>
+   <td *ngIf="criterioDuplicado">
+     Critério já cadastrado
+   </td>
+</tr>
+<tr>
+   <td><label>Peso</label></td>
+   <td><input [(ngModel)]="criterio.peso" name='criterioPesoInput'></td>
+</tr>
+</table>
+<table>
+<tr>
+   <th>Critério</th>
+   <th>Peso</th>
+</tr>
+<tr name='criterioList' *ngFor="let a of criterios">
+   <td id='criterioNome'>{{a.nome}}</td>
+   <td id='criterioPeso'>{{a.peso}}</td>
+   <td><button (click)="deletarCriterio(a)">Remover</button></td>
+</tr>
+</table>
+</html>

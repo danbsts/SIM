@@ -1,0 +1,7 @@
+<table>
+ 	<tr name='criterioList' *ngFor="let criterio of criteriosPossiveis;">
+ 	<td name='MediaNotas'>Média de notas do critério {{criterio.nome}}</td>
+<td id='Média de notas do critério {{criterio.nome}}'>{{mediaCriterios[criterio.nome]}}</td>
+</tr>
+<tr name='botaoGerarRelatorio'><button (click)="calculaMedia()" name='botaoRelatorio'>Gerar relatório</button></tr>
+</table>
