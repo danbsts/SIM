@@ -1,0 +1,25 @@
+<h1>Monitor: <input type="text" name="nomeMonitor" [(ngModel)]="monitor.nome"></h1>
+<ul> Disponibilidades:
+    <table>
+        <tr>
+            <th>Segunda-feira</th>
+            <th>Terca-feira</th>
+            <th>Quarta-feira</th>
+            <th>Quinta-feira</th>
+            <th>Sexta-feira</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" [(ngModel)]="monitor.disponibilidade[0]" name="segunda-feira"></td>
+            <td><input type="checkbox" [(ngModel)]="monitor.disponibilidade[1]" name="terca-feira"></td>
+            <td><input type="checkbox" [(ngModel)]="monitor.disponibilidade[2]" name="quarta-feira"></td>
+            <td><input type="checkbox" [(ngModel)]="monitor.disponibilidade[3]" name="quinta-feira"></td>
+            <td><input type="checkbox" [(ngModel)]="monitor.disponibilidade[4]" name="sexta-feira"></td>
+        </tr>
+    </table>
+</ul>
+<ul> Restrições:
+    <li><input type="text" name="restricoes" [(ngModel)]="restricoesStr"></li>
+</ul>
+<input type="checkbox" name="chefe" [(ngModel)]="monitor.chefe">
+<label for="true">Chefe</label><br>
+<button name="adicionar" (click)="criarMonitor()">Adicionar</button>

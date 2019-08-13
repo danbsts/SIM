@@ -1,0 +1,10 @@
+{
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "secure": false, 
+    "auth": {
+        "user": "simappsender@gmail.com",
+        "pass": "simappsend123"
+    },
+    "tls": { "rejectUnauthorized": true }
+  }

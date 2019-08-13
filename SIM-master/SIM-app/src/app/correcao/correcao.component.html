@@ -1,0 +1,37 @@
+<table>
+<tr>
+   <th>Nome</th>
+   <th>Login</th>
+   <th>Classes básicas</th>
+   <th>Relação entre as classes</th>
+   <th>Uso de pacotes</th>
+   <th>Uso de herança</th>
+   <th>Classe abstrata</th>
+   <th>Uso de exceções</th>
+   <th>Repositorio Array</th>
+   <th>Repositorio Lista</th>
+   <th>Interface Repositorio</th>
+   <th>Camada negócio</th>
+   <th>Camada fachada</th>
+   <th>Programa teste</th>
+</tr>
+<tr *ngFor="let a of alunos">
+   <td>{{a.nome}}</td>
+   <td>{{a.login}}</td>
+   <td class="meta"><input [(ngModel)]="a.criterios['classesBasicas']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['relClasses']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['usoPacotes']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['usoHeranca']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['classeAbstrata']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['usoExcecoes']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['repArray']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['repLista']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['interfaceRep']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['camadaNegocio']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['camadaFachada']" (change)="atualizarAluno(a)"></td>
+   <td class="meta"><input [(ngModel)]="a.criterios['programaTeste']" (change)="atualizarAluno(a)"></td>
+   <td *ngIf="temConceitosErrados">
+     Existem conceitos com notas inválidas
+   </td>
+</tr>
+</table>

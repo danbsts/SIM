@@ -1,0 +1,29 @@
+<table>
+    <thead *ngIf="monitores.length > 0">
+        <tr>
+            <th><label>Nome </label></th>
+            <th><label>Segunda-feira</label></th>
+            <th><label>Terça-feira</label></th>
+            <th><label>Quarta-feira</label></th>
+            <th><label>Quinta-feira</label></th>
+            <th><label>Sexta-feira</label></th>
+            <th><label>Restrições</label></th>
+            <th><label>Alocações</label></th>
+            <th><label>Chefe</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of monitores" name="monitoresList">
+            <td name="nome">{{m.nome}}</td>
+            <td name="segunda-feira">{{m.disponibilidade[0]}}</td>
+            <td name="terca-feira">{{m.disponibilidade[1]}}</td>
+            <td name="quarta-feira">{{m.disponibilidade[2]}}</td>
+            <td name="quinta-feira">{{m.disponibilidade[3]}}</td>
+            <td name="sexta-feira">{{m.disponibilidade[4]}}</td>
+            <td name="restricoes" ><p *ngFor="let r of m.restricoes">{{r}} </p></td>
+            <td *ngIf="m.restricoes.length == 0">-</td>
+            <td name="alocacoes">{{m.alocacoes}}</td>
+            <td name="chefe">{{m.chefe}}</td>
+        </tr>
+    </tbody>
+</table>

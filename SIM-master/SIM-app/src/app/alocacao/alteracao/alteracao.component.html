@@ -1,0 +1,25 @@
+<input name ='buscadia' [(ngModel)]="data"><button name = 'buscar' (click)="buscar()">Buscar Aula</button>
+<h5 name = "mensagem" *ngIf = "erroAloc">Quantidade insuficiente de monitores</h5>
+<table *ngIf="diaSelect != undefined">
+    <tr style="width:100%">
+        <th>Horário</th>
+        <th>Tipo</th>
+        <th>Data</th>
+        <th>Dia da Semana</th>
+        <th>Monitores necessários</th>
+        <th>Monitores alocados</th>
+        <th>Monitor Chefe/<th>
+    </tr>
+    <tr>
+        <td><input name="horario" [(ngModel)]="diaSelect.hora"></td>
+        <td><input name="tipo" [(ngModel)]="diaSelect.tipo"></td>
+        <td><input name="data" [(ngModel)]="diaSelect.data"></td>
+        <td><input name="dia" [(ngModel)]="diaSelect.diaSemana"></td>
+        <td><input name="monitoresNecessarios" [(ngModel)]="diaSelect.numAlocados"></td>
+        <td *ngIf="diaSelect.monitores.length > 0" ><input name="monitoresAlocados" [(ngModel)]="monitoresAlocados"></td>
+        <td *ngIf="diaSelect.monitores.length == 0"><input name="monitoresAlocados" [(ngModel)]="monitoresAlocados"></td>
+        <td><input name="chefe" type="checkbox" [(ngModel)]="diaSelect.soChefe"></td> 
+    </tr>
+    <tr><button name="confirmar" (click)="atualizarAula()">Confirmar</button></tr>
+</table>
+<button type="submit" (click)="alocarMonitores()">Alocar Monitores</button>

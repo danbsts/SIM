@@ -1,0 +1,38 @@
+<table>
+  <tr>
+     <td><label>To</label></td>
+     <td><input [(ngModel)]="email.to" ></td>
+     <td><button (click)="enviarEmail(email)">Enviar</button></td>
+  </tr>
+  <tr>
+    <td><label>subject </label></td>
+    <td><input [(ngModel)]="email.subject" ></td>
+ </tr>
+
+
+  <tr>
+     <td><label>message </label></td>
+     <td><input [(ngModel)]="email.text" ></td>
+  </tr>
+  </table>
+
+
+<button (click)="generate()"> Gerar Submissões</button>
+  <table>
+   <tr *ngIf="subs.length > 0">
+      <th>Aluno</th>
+      <th>Questão</th>
+      <th>Lista</th>
+      <th>Nota</th>
+      <th>Feedback</th>
+   </tr>
+   <tr *ngFor="let a of subs">
+      
+         <td><a routerLink="/submissao" (click)="sendsub(a)">{{a.aluno}}</a></td>
+         <td>{{a.questao}}</td>
+         <td>{{a.lista}} </td>
+         <td>{{a.nota}}</td>
+         <td>{{a.feedback}}</td>
+      
+   </tr>
+   </table>

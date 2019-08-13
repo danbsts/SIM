@@ -1,0 +1,22 @@
+<table>
+    <tr style="width:100%">
+        <th>Horário</th>
+        <th>Tipo</th>
+        <th>Data</th>
+        <th>Dia da Semana</th>
+        <th>Monitores necessários</th>
+        <th>Monitores alocados</th>
+        <th>Monitor Chefe</th>
+    </tr>
+    <tr *ngFor="let a of aulas" name="cronogramaTabela">
+        <td name="horario">{{a.hora}}</td>
+        <td name="tipo">{{a.tipo}}</td>
+        <td name="data">{{a.data}}</td>
+        <td name="dia">{{a.diaSemana}}</td>
+        <td name="monitoresNecessarios">{{a.numAlocados}}</td>
+        <td *ngFor="let m of a.monitores" name="monitoresAlocados">{{m.nome}} </td>
+        <td *ngIf="a.monitores.length == 0">-</td>
+        <td name="chefe">{{a.soChefe}}</td>
+    </tr>
+</table>
+
